@@ -1,0 +1,16 @@
+# Build outputs
+ /build/
+ /cmake-build-*/
+ CMakeFiles/
+ CMakeCache.txt
+ *.o
+ *.a
+ *.out
+ *.log
+
+ # IDEs
+ .idea/
+ .vscode/
+
+ # macOS Finder
+ .DS_Store
