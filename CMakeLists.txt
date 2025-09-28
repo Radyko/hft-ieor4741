@@ -1,12 +1,17 @@
 cmake_minimum_required(VERSION 3.16)
-project(hft_ieor4741 CXX)
+project(hft LANGUAGES CXX)
+
+# Use C++20
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Auto-include each immediate subfolder of projects/
-file(GLOB children RELATIVE "${CMAKE_SOURCE_DIR}/projects" "${CMAKE_SOURCE_DIR}/projects/*")
-foreach(child ${children})
-    if(IS_DIRECTORY "${CMAKE_SOURCE_DIR}/projects/${child}")
-        add_subdirectory("projects/${child}")
-    endif()
-endforeach()
+# Threads (for -pthread)
+find_package(Threads REQUIRED)
+
+# Client executable
+add_executable(hft_client hft_client.cpp)
+target_link_libraries(hft_client PRIVATE Threads::Threads)
+
+# Server executable
+add_executable(hft_server hft_server.cpp)
+target_link_libraries(hft_server PRIVATE Threads::Threads)

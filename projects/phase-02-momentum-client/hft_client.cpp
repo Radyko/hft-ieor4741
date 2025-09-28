@@ -3,6 +3,7 @@
 #include <chrono>
 #include <cstring>
 #include <cstdlib>
+#include <deque>
 #include <unistd.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
@@ -15,7 +16,7 @@ using namespace std;
 
 void receiveAndRespond(int socketFd, const string& name) {
     char buffer[BUFFER_SIZE];
-
+    deque<float> priceHistory;
     // Send client name
     send(socketFd, name.c_str(), name.size(), 0);
 
@@ -37,16 +38,35 @@ void receiveAndRespond(int socketFd, const string& name) {
         int priceId = stoi(data.substr(0, commaPos));
         float price = stof(data.substr(commaPos + 1));
 
+        if (priceHistory.size() >= 3)
+            priceHistory.pop_front();
+        priceHistory.push_back(price);
+
         cout << "📥 Received price ID: " << priceId << ", Value: " << price << endl;
 
-        // Simulate reaction delay
-        this_thread::sleep_for(chrono::milliseconds(100 + rand() % 300));
+        if (priceHistory.size() == 3)
+        {
+            float a = priceHistory[0];
+            float b = priceHistory[1];
+            float c = priceHistory[2];
 
-        // Send order (price ID)
-        string order = to_string(priceId);
-        send(socketFd, order.c_str(), order.length(), 0);
+            cout << "a: " << a << ", b: " << b << ", c: " << c << endl;
 
-        cout << "📤 Sent order for price ID: " << priceId << endl;
+            bool up   = (a < b) && (b < c);
+            bool down = (a > b) && (b > c);
+
+            if (up || down)
+            {
+                string order = to_string(priceId);
+                send(socketFd, order.c_str(), order.length(), 0);
+                this_thread::sleep_for(chrono::milliseconds(10 + rand() % 50));
+                cout << "Found momentum!! Sending order for priceID: " << priceId << endl;
+            }
+            else
+            {
+                cout << "No momentum!! Ignoring priceID: " << priceId << endl;
+            }
+        }
     }
 
     close(socketFd);
