@@ -10,10 +10,6 @@ CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 
-# Ignore entire project subdirectories that shouldn’t be tracked
-phase-02-momentum-client/
-phase-03-order-book/
-session-03-virtual-non-virtual-dispatch/
 
 # Ignore general build or output folders
 build/
