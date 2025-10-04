@@ -19,6 +19,8 @@ For this project I used C++17, and benchmarked it on a 14" MacBook Pro with the 
 20,000,000 trades. The results table showed that for all types of runs (homogeneous, 50/50, and bursty), the non-virtual 
 execution of trades was consistently faster. 
 
+Homogenous runtime means that all the orders were sent to one method, 50/50 meant that each handling of order was randomly assigned between the two similar virtual or non-virtual methods, and bursty was 16 to one method, 64 to the other. This shows the destinction of when optimizations can be made with predictable runtime (homogenous) to in between (bursty) to when optimizations cannot be made (50/50). 
+
 For my latest run, the median runtime for homogeneous + virtual was 81,215,167 ns 
 (≈ 0.0812 s), while the median runtime for homogeneous + non-virtual was 71,809,459 ns (≈ 0.0718 s). 
 The same trend holds across the other patterns: virtual dispatch is slower than non-virtual dispatch. 
