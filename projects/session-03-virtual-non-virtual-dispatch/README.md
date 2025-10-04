@@ -38,6 +38,5 @@ still comes from the cost of virtual dispatch versus inlined non-virtual calls.
 Median Throughput: Virtual vs Non-virtual visualization
 ![Throughput Median](throughput_median.png)
 
-*done with the help of an llm*
  
 
