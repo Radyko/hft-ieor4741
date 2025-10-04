@@ -1,12 +1,25 @@
-# Build outputs
-/build/
-/cmake-build-*/
-/build-*/
-/**/build/
+# Ignore zip archives
+*.zip
 
-# IDE/editor
-.idea/
-.vscode/
+# Ignore CSV outputs and results
+*.csv
 
-# macOS
+# Ignore CMake build files
+CMakeLists.txt
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Ignore entire project subdirectories that shouldn’t be tracked
+phase-02-momentum-client/
+phase-03-order-book/
+session-03-virtual-non-virtual-dispatch/
+
+# Ignore general build or output folders
+build/
+out/
+dist/
+
+# macOS and IDE files
 .DS_Store
+.idea/
