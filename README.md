@@ -7,3 +7,5 @@ with a focus on **C++** and **High-Frequency Trading systems**.
 - [Momentum-Based Smart Order Client](projects/phase-02-momentum-client)
 - [Virtual and Non-Virtual Dispatch](projects/session-03-virtual-non-virtual-dispatch)
 - [Local Order Book](projects/phase-03-order-book)
+- [CRTP vs Virtual Dispatch](session-04-crtp-virtual-dispatch)
+  
