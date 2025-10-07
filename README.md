@@ -8,5 +8,5 @@ with a focus on **C++** and **High-Frequency Trading systems**.
 - [Virtual and Non-Virtual Dispatch](projects/session-03-virtual-non-virtual-dispatch)
 - [Local Order Book](projects/phase-03-order-book)
 - [CRTP vs Virtual Dispatch](projects/session-04-crtp-virtual-dispatch)
-- [Benchmarking: Memory Layout (Contiguous vs Rows)](session-02-matrix-multiplication-memory-layout)
+- [Benchmarking: Memory Layout (Contiguous vs Rows)](projects/session-02-matrix-multiplication-memory-layout)
   
