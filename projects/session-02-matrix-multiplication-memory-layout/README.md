@@ -7,7 +7,7 @@ Contiguous layout (double*) — a single N×N block of memory.
 
 Row-pointer layout (double**) — an array of N pointers, each pointing to a row of N doubles.
 
-Both use the naïve triple-nested loop algorithm for multiplying two matrices A and B into C.
+Both use a naive triple-nested loop algorithm for multiplying two matrices A and B into C.
 
 The program allocates and fills matrices with random integers (1–10), performs one untimed warm-up, then runs five timed trials for N=500 and N=1000, computing and printing the average runtime for each layout. A checksum is accumulated to prevent the compiler from optimizing away the computations.
 
