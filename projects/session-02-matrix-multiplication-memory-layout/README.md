@@ -21,19 +21,17 @@ bash g++ -std=c++17 -O3 -march=native -Wall -Wextra -pedantic main.cpp -o matmul
 
 
 #### Example Output:
-462123 // this is checksum
 
+```
+462123 # checksum
 N = 500
-
 rows   avg: 199.212 ms
-
 contig avg: 174.794 ms
 
 N = 1000
-
 rows   avg: 1927.84 ms
-
 contig avg: 1570.59 ms
+```
 
 #### Conclusion: 
 The performance of matrix multiplication using contiguous memory is noticeably faster than when using row-by-row 
