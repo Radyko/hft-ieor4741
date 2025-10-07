@@ -99,6 +99,7 @@ int main()
     srand(12345);
     using clk = std::chrono::steady_clock;
     using ms  = std::chrono::duration<double, std::milli>;
+    double checksum = 0.0;
 
     const int N1 = 500;
     const int N2 = 1000;
@@ -148,26 +149,31 @@ int main()
         Matrix::matmulRows(rowsA1, rowsB1, rowsC1, N1);
         auto t1 = clk::now();
         rowsResults1[t] = std::chrono::duration_cast<ms>(t1 - t0).count();
+        checksum += rowsC1[t % N1][t % N1];
 
         // contig N1
         t0 = clk::now();
         Matrix::matmulContig(contigA1, contigB1, contigC1, N1);
         t1 = clk::now();
         contigResults1[t] = std::chrono::duration_cast<ms>(t1 - t0).count();
+        checksum += contigC1[(t % N1)*N1 + (t % N1)];
 
         // rows N2
         t0 = clk::now();
         Matrix::matmulRows(rowsA2, rowsB2, rowsC2, N2);
         t1 = clk::now();
         rowsResults2[t] = std::chrono::duration_cast<ms>(t1 - t0).count();
+        checksum += rowsC2[t % N2][t % N2];              // FIX: use N2
 
         // contig N2
         t0 = clk::now();
         Matrix::matmulContig(contigA2, contigB2, contigC2, N2);
         t1 = clk::now();
         contigResults2[t] = std::chrono::duration_cast<ms>(t1 - t0).count();
+        checksum += contigC2[(t % N2)*N2 + (t % N2)];     // FIX: use contigC2 and N2
     }
 
+    std::cout << checksum << std::endl;
     std::cout << "N = " << N1 << "\n";
     std::cout << "  rows   avg: " << Matrix::avg(rowsResults1, trials)   << " ms\n";
     std::cout << "  contig avg: " << Matrix::avg(contigResults1, trials) << " ms\n";
