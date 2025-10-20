@@ -9,4 +9,5 @@ with a focus on **C++** and **High-Frequency Trading systems**.
 - [Local Order Book](projects/phase-03-order-book)
 - [CRTP vs Virtual Dispatch](projects/session-04-crtp-virtual-dispatch)
 - [Benchmarking: Memory Layout (Contiguous vs Rows)](projects/session-02-matrix-multiplication-memory-layout)
+- [High-Frequency Trading System](projects/phase-04-hft-trading-system) 
   
