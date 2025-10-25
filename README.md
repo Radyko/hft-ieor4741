@@ -10,4 +10,4 @@ with a focus on **C++** and **High-Frequency Trading systems**.
 - [CRTP vs Virtual Dispatch](projects/session-04-crtp-virtual-dispatch)
 - [Benchmarking: Memory Layout (Contiguous vs Rows)](projects/session-02-matrix-multiplication-memory-layout)
 - [High-Frequency Trading System](projects/phase-04-hft-trading-system) 
-  
+- [High-Performance Order Book](projects/session-05-high-perf-order-book)
