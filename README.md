@@ -11,3 +11,4 @@ with a focus on **C++** and **High-Frequency Trading systems**.
 - [Benchmarking: Memory Layout (Contiguous vs Rows)](projects/session-02-matrix-multiplication-memory-layout)
 - [High-Frequency Trading System](projects/phase-04-hft-trading-system) 
 - [High-Performance Order Book](projects/session-05-high-perf-order-book)
+- [Optimization: Order Book](projects/phase-05-hft-order-book)
