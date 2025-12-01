@@ -4,6 +4,7 @@ This repository contains projects for **Programming for Financial Engineering (I
 with a focus on **C++** and **High-Frequency Trading systems**.
 
 ## 📂 Projects
+- [Optimizing Matrix Calculation](projects/session-01-fast-matrix)
 - [Momentum-Based Smart Order Client](projects/phase-02-momentum-client)
 - [Virtual and Non-Virtual Dispatch](projects/session-03-virtual-non-virtual-dispatch)
 - [Local Order Book](projects/phase-03-order-book)
