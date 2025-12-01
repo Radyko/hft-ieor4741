@@ -10,7 +10,7 @@ By retrieving a pointer to the row and accessing elements directly, all function
 ### 2. Improved Cache Locality
 Using:
 
-const int* rowPtr = matrix[i].data();
+```const int* rowPtr = matrix[i].data();```
 
 Allows the loop to iterate through memory linearly. This access pattern improves cache locality because sequential data is loaded into cache together. As a result, subsequent accesses within the same row are significantly faster.
 
